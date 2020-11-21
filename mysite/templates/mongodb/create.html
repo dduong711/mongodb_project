@@ -1,0 +1,18 @@
+{% extends "mongodb/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block inner %}
+<form method="POST">
+    {% csrf_token %}
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {{ form|crispy }}
+    <button class="btn btn-primary" type="submit">Create</button>
+</form>
+{% endblock inner %}

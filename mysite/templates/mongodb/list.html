@@ -1,0 +1,10 @@
+{% extends "mongodb/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block inner %}
+    <h3>MongDB Connection List</h3>
+    {% for client in object_list %}
+        <p>{{ forloop.counter }}: <span style="font-family: Consolas;display:inline;">{{ client.connection_string }}</span></p>
+    {% endfor %}
+{% endblock inner %}
