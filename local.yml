@@ -21,7 +21,6 @@ services:
     environment:
       - DJANGO_READ_DOT_ENV_FILE=True
       - DATABASE_URL=postgres://postgres:debug@localhost:5432/mysite
-      - MONGODB_URL=mongodb+srv://johnprice711:HNHSbimwJqFDx1Xt@cluster.mjs1b.mongodb.net/mysite?retryWrites=true&w=majority
     ports:
       - "8000:8000"
     command: /start

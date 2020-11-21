@@ -5,6 +5,12 @@
 {% block inner %}
     <h3>MongDB Connection List</h3>
     {% for client in object_list %}
-        <p>{{ forloop.counter }}: <span style="font-family: Consolas;display:inline;">{{ client.connection_string }}</span></p>
+        <h5>{{ forloop.counter }}</h5>
+        <p>db_name: {{ client.db_name }}</p>
+        <p>db_user: {{ client.db_user }}</p>
+        <p>db_password: {{ client.db_password }}</p>
+        <p>host: {% for h in client.host.all %}{{ h.host_name }}{% endfor %}</p>
+        <p>connection string: {{ client.connection_string }}</p>
+        <br>
     {% endfor %}
 {% endblock inner %}
